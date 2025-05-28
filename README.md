@@ -34,16 +34,86 @@ template-fastapi/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/template-fastapi.git
+git clone https://github.com/PongpreechaSuea/template-fastapi.git
 cd template-fastapi
 ```
 
 ### 2. Create a virtual environment and install dependencies
 
+#### Installation
+
+##### **1. ติดตั้ง Miniconda บน macOS**
+
+หากคุณยังไม่มี Miniconda สามารถติดตั้งได้ตามขั้นตอนนี้:
+
+1. **ดาวน์โหลด Miniconda**  
+   เปิด Terminal และใช้คำสั่งนี้เพื่อดาวน์โหลด Miniconda:
+
 ```bash
-python -m venv venv
-source venv/bin/activate   # On Windows use `venv\Scripts\activate`
-pip install -r requirements.txt
+curl -o Miniconda3-latest-MacOSX-x86_64.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+```
+
+2. **ติดตั้ง Miniconda**  
+   หลังจากดาวน์โหลดเสร็จแล้ว ติดตั้งด้วยคำสั่งนี้:
+
+```bash
+bash Miniconda3-latest-MacOSX-x86_64.sh
+```
+
+- เมื่อระบบถามให้กด **Enter** เพื่อดูข้อตกลงการใช้งาน
+- กด **'yes'** เพื่อยอมรับข้อตกลง
+- กด **Enter** เพื่อเลือกตำแหน่งติดตั้ง (สามารถใช้ค่า default ได้)
+
+3. **Activate Conda Environment**  
+   หลังจากติดตั้งเสร็จ ให้เปิดใช้งาน Miniconda ด้วยคำสั่งนี้:
+
+```bash
+source ~/.bashrc
+```
+
+หรือถ้าใช้ `zsh` ให้ใช้คำสั่งนี้แทน:
+
+```bash
+source ~/.zshrc
+```
+
+4. **ตรวจสอบว่าติดตั้งสำเร็จหรือไม่**  
+   ใช้คำสั่งนี้เพื่อตรวจสอบว่า Conda ติดตั้งสำเร็จหรือไม่:
+
+```bash
+conda --version
+```
+
+---
+
+#### **2. ตั้งค่า Environment และติดตั้ง Dependencies**
+
+หลังจากติดตั้ง Miniconda สำเร็จ ให้ทำตามขั้นตอนต่อไปนี้:
+
+1. **Set up environment variables in the `.env` file.**
+
+2. **ให้สิทธิ์ไฟล์ setup.sh**
+
+```bash
+chmod +x setup.sh
+```
+
+3. **รันไฟล์ setup.sh เพื่อสร้าง Environment**
+
+```bash
+./setup.sh
+```
+
+4. **Activate Environment**
+
+```bash
+conda activate file-service
+```
+
+5. **ตรวจสอบ Python เวอร์ชัน**
+
+```bash
+python --version    # Python 3.9.16
 ```
 
 ### 3. Run the app locally
