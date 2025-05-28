@@ -29,6 +29,6 @@ COPY --chown=root:root ./app .
 
 USER appuser
 
-EXPOSE 8088
+EXPOSE 8000
 
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8088", "--log-config", "./logging_config.yaml"]
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000", "--log-config", "./logging_config.yaml"]
